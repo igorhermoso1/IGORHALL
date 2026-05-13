@@ -1,0 +1,364 @@
+/* style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#7fdcff;
+    --blue-strong:#2eb8ff;
+    --orange:#ff9f43;
+    --ocre:#d9a441;
+    --cream:#fff4d6;
+    --white:#ffffff;
+    --dark:#07111f;
+    --dark2:#020611;
+}
+
+body{
+    overflow-x:hidden;
+    min-height:100vh;
+    background:linear-gradient(to bottom,var(--dark),var(--dark2));
+    font-family:'Orbitron',sans-serif;
+    color:white;
+    position:relative;
+}
+
+/* =========================
+   FONDO RETRO
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+}
+
+.grid{
+    position:absolute;
+    width:200%;
+    height:200%;
+    bottom:-65%;
+    left:-50%;
+    background:
+    linear-gradient(rgba(127,220,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,220,255,0.15) 1px, transparent 1px);
+    background-size:70px 70px;
+
+    transform:
+    perspective(800px)
+    rotateX(75deg);
+
+    animation:gridMove 12s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:
+        perspective(800px)
+        rotateX(75deg)
+        translateY(0);
+    }
+
+    to{
+        transform:
+        perspective(800px)
+        rotateX(75deg)
+        translateY(70px);
+    }
+}
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:0.4;
+}
+
+.glow1{
+    width:400px;
+    height:400px;
+    background:#2eb8ff;
+    top:-100px;
+    left:-100px;
+}
+
+.glow2{
+    width:350px;
+    height:350px;
+    background:#ff9f43;
+    bottom:-100px;
+    right:-100px;
+}
+
+.scanlines{
+    position:absolute;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events:none;
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:80px 80px;
+    opacity:0.18;
+    animation:starsMove 20s linear infinite;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(80px);
+    }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding-top:70px;
+    padding-bottom:40px;
+}
+
+.title{
+    font-family:'Press Start 2P',cursive;
+    font-size:clamp(2rem,5vw,4.5rem);
+    color:var(--cream);
+    text-shadow:
+    0 0 10px var(--blue),
+    0 0 25px var(--blue),
+    0 0 45px var(--blue);
+    position:relative;
+}
+
+.subtitle{
+    margin-top:30px;
+    color:var(--orange);
+    letter-spacing:4px;
+    font-size:0.9rem;
+}
+
+/* =========================
+   GLITCH
+========================= */
+
+.glitch::before,
+.glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    overflow:hidden;
+}
+
+.glitch::before{
+    color:#00ffff;
+    z-index:-1;
+    animation:glitch1 2s infinite;
+}
+
+.glitch::after{
+    color:#ff8800;
+    z-index:-2;
+    animation:glitch2 2s infinite;
+}
+
+@keyframes glitch1{
+    0%{transform:translate(0)}
+    20%{transform:translate(-2px,2px)}
+    40%{transform:translate(-2px,-2px)}
+    60%{transform:translate(2px,2px)}
+    80%{transform:translate(2px,-2px)}
+    100%{transform:translate(0)}
+}
+
+@keyframes glitch2{
+    0%{transform:translate(0)}
+    20%{transform:translate(2px,-2px)}
+    40%{transform:translate(2px,2px)}
+    60%{transform:translate(-2px,-2px)}
+    80%{transform:translate(-2px,2px)}
+    100%{transform:translate(0)}
+}
+
+/* =========================
+   BARRA
+========================= */
+
+.arcade-bar{
+    margin:35px auto 0;
+    width:min(900px,90%);
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+
+    padding:15px 25px;
+
+    border:2px solid rgba(255,255,255,0.15);
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:14px;
+
+    box-shadow:
+    0 0 15px rgba(127,220,255,0.15);
+}
+
+.arcade-bar span{
+    color:var(--cream);
+    font-size:0.8rem;
+}
+
+/* =========================
+   MENU CARDS
+========================= */
+
+.menu-container{
+    width:min(1300px,92%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+
+    padding:40px 0 80px;
+}
+
+.card{
+    position:relative;
+
+    padding:35px;
+
+    text-decoration:none;
+    color:white;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    overflow:hidden;
+
+    transition:0.35s;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 20px rgba(0,0,0,0.3);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+
+    transform:translateX(-120%);
+    transition:0.8s;
+}
+
+.card:hover::before{
+    transform:translateX(120%);
+}
+
+.card:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    border-color:rgba(127,220,255,0.6);
+
+    box-shadow:
+    0 0 25px rgba(127,220,255,0.35),
+    0 0 45px rgba(255,159,67,0.2);
+}
+
+.card-number{
+    font-size:0.8rem;
+    color:var(--orange);
+    margin-bottom:20px;
+    letter-spacing:2px;
+}
+
+.card h2{
+    font-size:1.6rem;
+    margin-bottom:15px;
+    color:var(--blue);
+}
+
+.card p{
+    line-height:1.6;
+    color:#eaeaea;
+    font-size:0.95rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    padding:30px 20px 60px;
+    color:rgba(255,255,255,0.6);
+    font-size:0.8rem;
+}
+
+.credits{
+    margin-top:10px;
+    color:var(--orange);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    .arcade-bar{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .card{
+        padding:28px;
+    }
+
+    .card h2{
+        font-size:1.3rem;
+    }
+}
