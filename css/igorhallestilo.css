@@ -139,7 +139,7 @@ body{
 }
 
 .title{
-    font-family:'Press Start 2P',cursive;
+     font-family:'Audiowide',sans-serif;
     font-size:clamp(2rem,5vw,4.5rem);
     color:var(--cream);
     text-shadow:
@@ -357,7 +357,7 @@ body{
 .game-section-title{
     margin-bottom:28px;
     color:var(--cream);
-    font-family:'Press Start 2P',cursive;
+        font-family:'Audiowide',sans-serif;
     font-size:clamp(1rem,2.5vw,1.55rem);
     line-height:1.5;
     text-shadow:
