@@ -1,0 +1,381 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGOR HALL</title>
+
+  <link rel="stylesheet" href="css/igorhallestilo.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Audiowide&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="intro-screen" id="introScreen" aria-hidden="true">
+    <div class="intro-core">
+      <span class="intro-kicker">SYSTEM BOOT</span>
+      <h2>Bienvenido a IgorHall</h2>
+      <p>Cargando módulos de aprendizaje...</p>
+    </div>
+  </div>
+
+  <!-- FONDO -->
+  <div class="background">
+    <div class="grid"></div>
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+    <div class="scanlines"></div>
+    <div class="stars"></div>
+  </div>
+
+  <button class="info-button" id="openInfoModal" type="button" aria-label="Ver información de IgorHall">
+    I
+  </button>
+
+  <!-- CABECERA -->
+  <header class="hero">
+    <h1 class="title glitch" data-text="IGOR HALL">
+      IGOR HALL
+    </h1>
+
+    <p class="subtitle">
+      ¿QUÉ QUIERES QUE TE ENSEÑE?
+    </p>
+
+    <div class="arcade-bar">
+      <span>ESTAMOS ONLINE</span>
+      <span>RETRO MODE ACTIVE</span>
+      <span id="clock">00:00:00</span>
+    </div>
+  </header>
+
+  <!-- MENU -->
+  <main>
+
+  <section class="menu-container">
+
+    <a class="card html-card" href="https://igorhermoso1.github.io/IGORCADEMIA/" target="_blank">
+      <div class="card-number">01</div>
+      <h2>HTML & CSS</h2>
+      <p>Diseño web, maquetación, estilos y responsive.</p>
+    </a>
+
+    <a class="card js-card" href="https://igorhermoso1.github.io/IGORSCRIPT/" target="_blank">
+      <div class="card-number">02</div>
+      <h2>JAVASCRIPT</h2>
+      <p>Lógica, DOM, eventos y programación dinámica.</p>
+    </a>
+
+    <a class="card hardware-card" href="https://igorhermoso1.github.io/IGORHARDWARE/" target="_blank">
+      <div class="card-number">03</div>
+      <h2>HARDWARE</h2>
+      <p>Componentes, arquitectura y sistemas operativos.</p>
+    </a>
+
+    <a class="card redes-card" href="https://igorhermoso1.github.io/IGORREDES/" target="_blank">
+      <div class="card-number">04</div>
+      <h2>REDES</h2>
+      <p>TCP/IP, routing, switching y conectividad.</p>
+    </a>
+
+    <a class="card server-card" href="https://igorhermoso1.github.io/IGORSERVER/" target="_blank">
+      <div class="card-number">05</div>
+      <h2>SERVER</h2>
+      <p>Administración, servicios y entornos backend.</p>
+    </a>
+
+    <a class="card cyber-card" href="#" data-assistant-topic="cyber">
+      <div class="card-number">06</div>
+      <h2>CIBERSEGURIDAD</h2>
+      <p>Seguridad digital, defensa, análisis de riesgos y laboratorios prácticos.</p>
+    </a>
+
+    <a class="card sql-card" href="https://igorhermoso1.github.io/IGORSQL/" target="_blank">
+      <div class="card-number">07</div>
+      <h2>SQL</h2>
+      <p>Bases de datos, consultas y modelado relacional.</p>
+    </a>
+    <a class="card unity-card" href="https://igorhermoso1.github.io/IGORUNITY/" target="_blank">
+      <div class="card-number">08</div>
+      <h2>Unity</h2>
+      <p>Unity, desarrollo de videojuegos y scripting.</p>
+    </a>
+
+    <a class="card ai-card" href="#" data-assistant-topic="ai">
+      <div class="card-number">09</div>
+      <h2>IA</h2>
+      <p>Inteligencia artificial, prompts, automatización y proyectos guiados.</p>
+    </a>
+
+  </section>
+
+  <section class="game-section">
+    <h2 class="game-section-title">No todo va a ser estudiar o qu&eacute;?</h2>
+
+    <a class="card survival-card" href="https://igorhermoso1.github.io/IGORAPALACHES/" target="_blank">
+      <div class="card-number">10</div>
+      <h2>APALACHES</h2>
+      <p>La paranoia personal, personal paranoyitti</p>
+    </a>
+
+  </section>
+
+  </main>
+
+  <section class="info-modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker">IGORHALL DATABASE</span>
+          <h2 id="infoModalTitle">Qué puedes aprender aquí</h2>
+        </div>
+        <button class="modal-close" type="button" aria-label="Cerrar información" data-close-modal>×</button>
+      </div>
+
+      <div class="modal-tabs" role="tablist" aria-label="Bloques de información de IgorHall">
+        <button class="tab-button active" type="button" role="tab" aria-selected="true" data-tab="html">HTML/CSS</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="javascript">JavaScript</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="hardware">Hardware</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="redes">Redes</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="server">Server</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="cyber">Ciberseguridad</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="sql">SQL</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="unity">Unity</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="ia">IA</button>
+      </div>
+
+      <div class="modal-content">
+        <article class="tab-panel active" id="tab-html" role="tabpanel">
+          <div class="panel-hero html-tone">
+            <span>01 // IGORCADEMIA</span>
+            <h3>HTML & CSS</h3>
+            <p>Frontend desde cero con ejercicios interactivos, editores en vivo, retos visuales, IgorPoints, logros y una ruta pensada para construir páginas reales.</p>
+          </div>
+          <div class="panel-stats">
+            <span>70+ ejercicios</span><span>17 módulos</span><span>5 premios</span><span>Responsive</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Estructura HTML:</strong> DOCTYPE, html, head, body, jerarquía, metadatos y organización base.</li>
+            <li><strong>Semántica:</strong> header, nav, main, article, section, footer y buenas prácticas de accesibilidad.</li>
+            <li><strong>Formularios:</strong> form, input, select, textarea, atributos, validación y formularios completos.</li>
+            <li><strong>CSS base:</strong> selectores, clases, IDs, combinadores, box model, colores HEX/RGB/HSL y gradientes.</li>
+            <li><strong>Layout:</strong> display, position, Flexbox, CSS Grid, áreas, auto-fit y diseños adaptables.</li>
+            <li><strong>Interacción visual:</strong> pseudoclases, hover, focus, transiciones, transformaciones y keyframes.</li>
+            <li><strong>Responsive:</strong> media queries, mobile-first, unidades fluidas, variables CSS y temas.</li>
+            <li><strong>Extras visuales:</strong> filter, backdrop-filter, Google Fonts, iconos, clip-path, mix-blend y efectos avanzados.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-javascript" role="tabpanel">
+          <div class="panel-hero js-tone">
+            <span>02 // IGORSCRIPT</span>
+            <h3>JavaScript</h3>
+            <p>Programación web práctica: lógica, DOM, eventos, asincronía, APIs y proyectos visuales con datos reales.</p>
+          </div>
+          <div class="panel-stats">
+            <span>124 ejercicios</span><span>12 módulos</span><span>APIs reales</span><span>Proyectos</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Variables y tipos:</strong> var, let, const, strings, numbers, booleanos, null, undefined y template literals.</li>
+            <li><strong>DOM y selectores:</strong> getElementById, querySelector, innerHTML, textContent y atributos data-*.</li>
+            <li><strong>Eventos:</strong> click, input, submit, teclado, addEventListener y comportamiento interactivo.</li>
+            <li><strong>Lógica:</strong> condicionales, switch, ternarios, operadores lógicos, bucles y control de flujo.</li>
+            <li><strong>Funciones:</strong> funciones clásicas, arrow functions, parámetros, return, scope y reutilización.</li>
+            <li><strong>Datos complejos:</strong> arrays, objetos, push, map, filter, find, spread y destructuring.</li>
+            <li><strong>Estilos con JS:</strong> classList, style, toggles, render dinámico y animaciones disparadas por código.</li>
+            <li><strong>Async y proyectos:</strong> fetch, async/await, PokéAPI, SuperHero API, cards dinámicas y buscadores visuales.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-hardware" role="tabpanel">
+          <div class="panel-hero hardware-tone">
+            <span>03 // IGORHARDWARE</span>
+            <h3>Hardware</h3>
+            <p>Sistemas microinformáticos con estética tierra/ocre: componentes, montaje, diagnóstico, compatibilidad y laboratorios prácticos.</p>
+          </div>
+          <div class="panel-stats">
+            <span>PC Builder</span><span>Incidencias</span><span>Laboratorio 2026</span><span>Flashcards</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Fundamentos:</strong> unidades de medida, hardware vs software, tipos de ordenadores y periféricos.</li>
+            <li><strong>Componentes:</strong> CPU, placa base, RAM, almacenamiento, GPU, fuente, refrigeración y cajas.</li>
+            <li><strong>Firmware y sistema:</strong> BIOS/UEFI, sistema operativo, Windows, drivers y virtualización.</li>
+            <li><strong>Montaje:</strong> orden de ensamblaje, cableado, seguridad, pruebas iniciales y errores comunes.</li>
+            <li><strong>Compatibilidad:</strong> sockets, chipset, formato, consumo, cuello de botella y equilibrio de presupuesto.</li>
+            <li><strong>Diagnóstico:</strong> equipos que no arrancan, pantallas negras, ruidos, temperaturas y fallos de red.</li>
+            <li><strong>Simuladores:</strong> PC Builder con catálogo de piezas y resolutorio de incidencias guiado.</li>
+            <li><strong>Laboratorio moderno:</strong> IA en PCs, NPU, tecnologías emergentes y tendencias 2026.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-redes" role="tabpanel">
+          <div class="panel-hero redes-tone">
+            <span>04 // IGORREDES</span>
+            <h3>Redes</h3>
+            <p>Networking gamificado para entender conectividad, direccionamiento, subnetting, WiFi, VLANs, routing y topologías.</p>
+          </div>
+          <div class="panel-stats">
+            <span>Simulador de red</span><span>Subnetting</span><span>Router CLI</span><span>Mapas lógicos</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Fundamentos:</strong> conceptos de red, modelos, cableado, capa física y diseño básico.</li>
+            <li><strong>Direccionamiento:</strong> IP, máscaras, redes, hosts, gateway, DNS y configuración práctica.</li>
+            <li><strong>Subnetting:</strong> calculadora visual, divisor, ejercicios resueltos y generador aleatorio.</li>
+            <li><strong>Red inalámbrica:</strong> WiFi, cobertura, seguridad, tendencias actuales y laboratorio 2026.</li>
+            <li><strong>VLAN y avanzado:</strong> segmentación, routing, switching y escenarios de empresa.</li>
+            <li><strong>Simulador:</strong> arrastrar dispositivos, conectarlos, configurar IPs, guardar topologías y hacer ping.</li>
+            <li><strong>Mapas lógicos:</strong> editor tipo plano para paredes, zonas y dispositivos de red.</li>
+            <li><strong>Router:</strong> configurador con CLI estilo Cisco IOS, lecciones guiadas y modo libre.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-server" role="tabpanel">
+          <div class="panel-hero server-tone">
+            <span>05 // IGORSERVER</span>
+            <h3>Server</h3>
+            <p>Administración de sistemas con Windows Server, Linux, servicios de red, virtualización, copias de seguridad y monitorización.</p>
+          </div>
+          <div class="panel-stats">
+            <span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Nagios</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Windows Server:</strong> introducción, roles, administración, escritorio remoto y escenarios reales.</li>
+            <li><strong>Active Directory:</strong> dominio, usuarios, grupos, OU, permisos y estructura de empresa.</li>
+            <li><strong>DNS y DHCP:</strong> resolución de nombres, concesiones, reservas y servicios esenciales.</li>
+            <li><strong>VirtualBox:</strong> creación de laboratorios, máquinas virtuales, redes internas y simuladores.</li>
+            <li><strong>Almacenamiento:</strong> discos, particiones, volúmenes, RAID y administración segura.</li>
+            <li><strong>Backups:</strong> copias de seguridad, Acronis, recovery y simulador de restauración.</li>
+            <li><strong>Avanzado:</strong> GPOs, políticas, PowerShell Server, seguridad, permisos y redes avanzadas.</li>
+            <li><strong>Linux y monitorización:</strong> Ubuntu Server, Samba + AD, distros Linux y Nagios.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-cyber" role="tabpanel">
+          <div class="panel-hero cyber-tone">
+            <span>06 // NUEVA RUTA</span>
+            <h3>Ciberseguridad</h3>
+            <p>Una ruta preparada para aprender seguridad digital con mentalidad defensiva, ética y práctica: proteger sistemas, entender riesgos y responder ante incidentes.</p>
+          </div>
+          <div class="panel-stats">
+            <span>Defensa</span><span>Riesgos</span><span>Laboratorios</span><span>Ética</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Fundamentos:</strong> amenazas, vulnerabilidades, impacto, confidencialidad, integridad y disponibilidad.</li>
+            <li><strong>Higiene digital:</strong> contraseñas, MFA, copias, privacidad, actualizaciones y hábitos seguros.</li>
+            <li><strong>Redes seguras:</strong> firewall, segmentación, puertos, servicios expuestos y detección básica.</li>
+            <li><strong>Hardening:</strong> permisos, usuarios, políticas, configuración segura y reducción de superficie de ataque.</li>
+            <li><strong>Ingeniería social:</strong> phishing, suplantación, señales de alerta y protocolos de respuesta.</li>
+            <li><strong>Análisis de riesgos:</strong> inventario, criticidad, probabilidad, impacto y priorización de medidas.</li>
+            <li><strong>Respuesta a incidentes:</strong> logs, aislamiento, documentación, recuperación y lecciones aprendidas.</li>
+            <li><strong>Laboratorios éticos:</strong> escenarios guiados, checklist de seguridad y reportes claros sin salir del marco legal.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-sql" role="tabpanel">
+          <div class="panel-hero sql-tone">
+            <span>07 // IGOR SQL ACADEMY</span>
+            <h3>SQL y Bases de Datos</h3>
+            <p>Bases de datos relacionales con SQLite, diagramas ER, consola SQL real, bases temáticas y ejercicios progresivos.</p>
+          </div>
+          <div class="panel-stats">
+            <span>SQLite</span><span>Consola real</span><span>BDs temáticas</span><span>Diagramas ER</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Fundamentos:</strong> tablas, registros, columnas, relaciones, SGBD y modelo relacional.</li>
+            <li><strong>Herramientas:</strong> DB Browser, DBeaver, SQLiteOnline, DataGrip y flujo de trabajo.</li>
+            <li><strong>Modelo de datos:</strong> tipos, restricciones, primary key, foreign key, cascadas y cardinalidad.</li>
+            <li><strong>DML y estructura:</strong> CREATE TABLE, INSERT, UPDATE, DELETE, DROP y ALTER TABLE.</li>
+            <li><strong>Consultas:</strong> SELECT, WHERE, alias, DISTINCT, ORDER BY, LIMIT, LIKE, BETWEEN e IN.</li>
+            <li><strong>Agregaciones:</strong> COUNT, SUM, AVG, GROUP BY, HAVING y lectura de resultados agrupados.</li>
+            <li><strong>Avanzado:</strong> JOINs, subconsultas, normalización, vistas, transacciones e índices.</li>
+            <li><strong>Práctica:</strong> Pokémon, Marvel, hospital, streaming, colegio, baloncesto y laboratorio SQL.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-unity" role="tabpanel">
+          <div class="panel-hero unity-tone">
+            <span>08 // IGORUNITY</span>
+            <h3>Unity</h3>
+            <p>Hoja de ruta completa desde el editor hasta proyectos reales, C# avanzado, físicas, UI, multiplayer, VR y optimización.</p>
+          </div>
+          <div class="panel-stats">
+            <span>82 temas</span><span>7 niveles</span><span>91 assets</span><span>10+ vídeos</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>Nivel 0:</strong> Unity Hub, instalación, Scene, Game View, Hierarchy, Inspector, Project y Console.</li>
+            <li><strong>GameObjects:</strong> Transform, componentes esenciales, prefabs, variants, parenting y escenas.</li>
+            <li><strong>C# scripting:</strong> variables, condicionales, bucles, métodos, clases, herencia, interfaces y MonoBehaviour.</li>
+            <li><strong>Movimiento y física:</strong> vectores, Lerp, CharacterController, Rigidbody, colisiones, triggers y Raycast.</li>
+            <li><strong>Sistemas Unity:</strong> Animator, UI, TextMeshPro, HUD, partículas, iluminación, audio, DoTween y Cinemachine.</li>
+            <li><strong>Proyectos reales:</strong> combate, inventario RPG, IA enemiga, diálogos, guardado, shooter y survival horror.</li>
+            <li><strong>Experto:</strong> events, LINQ, async/await, patrones, Shader Graph, VFX Graph, Addressables y DOTS.</li>
+            <li><strong>Salida profesional:</strong> multiplayer, ML Agents, VR, profiler, builds, publicación y portfolio.</li>
+          </ol>
+        </article>
+
+        <article class="tab-panel" id="tab-ia" role="tabpanel">
+          <div class="panel-hero ia-tone">
+            <span>09 // NUEVA RUTA</span>
+            <h3>Inteligencia Artificial</h3>
+            <p>Una ruta para entender, usar y construir con IA: prompts, asistentes, automatización, análisis de información y proyectos aplicados.</p>
+          </div>
+          <div class="panel-stats">
+            <span>Prompts</span><span>Asistentes</span><span>Automatización</span><span>Proyectos</span>
+          </div>
+          <ol class="module-list">
+            <li><strong>IA base:</strong> qué es un modelo, cómo responde, límites, sesgos, datos y evaluación crítica.</li>
+            <li><strong>Prompts:</strong> instrucciones, roles, formatos, iteración, seguridad, creatividad y productividad.</li>
+            <li><strong>Asistentes:</strong> conversación guiada, memoria falsa/controlada, tono, contexto y respuestas útiles.</li>
+            <li><strong>Automatización:</strong> resúmenes, análisis de documentos, generación de recursos y flujos de trabajo.</li>
+            <li><strong>Contenido:</strong> imágenes, textos, ideas, esquemas, actividades de clase y materiales de estudio.</li>
+            <li><strong>Datos:</strong> clasificación simple, extracción de información, tablas, patrones y revisión asistida.</li>
+            <li><strong>Uso responsable:</strong> verificación, privacidad, propiedad intelectual, transparencia y límites.</li>
+            <li><strong>Proyectos:</strong> chatbot educativo, generador de recursos, copiloto de estudio y automatizaciones sencillas.</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="virtual-assistant" id="virtualAssistant" aria-label="Asistente virtual de IgorHall">
+    <div class="assistant-chat" id="assistantChat" aria-hidden="true">
+      <div class="assistant-chat-header">
+        <div>
+          <span>IGORBOT</span>
+          <strong>Asistente del Hall</strong>
+        </div>
+        <button class="assistant-close" id="assistantClose" type="button" aria-label="Cerrar asistente">×</button>
+      </div>
+
+      <div class="assistant-messages" id="assistantMessages" aria-live="polite">
+        <p class="assistant-message bot">Pregúntame por módulos, temas, pestañas, puntos, cómo usar el hall o por dónde empezar.</p>
+      </div>
+
+      <form class="assistant-form" id="assistantForm">
+        <input id="assistantInput" type="text" autocomplete="off" placeholder="Pregunta por el contenido..." aria-label="Pregunta para IgorBot">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <button class="assistant-avatar" id="assistantAvatar" type="button" aria-label="Abrir asistente virtual">
+      <img id="assistantSprite" src="assets/avatar/igor-idle-1.png" alt="Avatar pixel art de IgorBot">
+      <span class="assistant-bubble">¿Dudas?</span>
+    </button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>IGORCADE SYSTEM // VERSION 1.1</p>
+    <p class="credits">POWERED BY GITHUB PAGES</p>
+  </footer>
+
+  <script src="js/appIgorHall.js"></script>
+
+</body>
+</html>
